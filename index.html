@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr. Ahmed Emad</title>
+<meta name="description" content="شرح الكيمياء والعلوم المتكاملة للثانوية العامة والأزهرية والبكالوريا، مع ملخصات وكورسات مراجعة بقلم د. أحمد عماد.">
+<meta name="theme-color" content="#2a1fff">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:title" content="د. أحمد عماد | صيدلي ومدرس كيمياء">
+<meta property="og:description" content="شرح الكيمياء والعلوم المتكاملة للثانوية العامة والأزهرية والبكالوريا.">
+<meta property="og:image" content="https://surveyheartmedia.s3.ap-south-1.amazonaws.com/files/063e587367c1d1106ff80aaadeede5/6af4d1277c9d7f56540432db/sh_1794429458980.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="icon" href="https://surveyheartmedia.s3.ap-south-1.amazonaws.com/files/cd0c33b0594e4433d1a8ca61f11ef7/6a2e019efda9df4edf755681/sh_1781399992362.png" type="image/png">
+<style>
+:root{
+  --bg:#f8f9fd;
+  --surface:#ffffff;
+  --soft:#eceefb;
+  --ink:#14122b;
+  --muted:#5b5a74;
+  --line:#dcdff0;
+  --accent:#2a1fff;
+  --accent-ink:#ffffff;
+  --spark:#ffb800;
+  --shadow:rgba(42,31,255,.16);
+  --hex:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e0d1f;
+    --surface:#171631;
+    --soft:#1f1e40;
+    --ink:#f1f1fb;
+    --muted:#a9a8c6;
+    --line:#2c2b52;
+    --accent:#7b73ff;
+    --accent-ink:#0e0d1f;
+    --shadow:rgba(123,115,255,.22)
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e0d1f;
+  --surface:#171631;
+  --soft:#1f1e40;
+  --ink:#f1f1fb;
+  --muted:#a9a8c6;
+  --line:#2c2b52;
+  --accent:#7b73ff;
+  --accent-ink:#0e0d1f;
+  --shadow:rgba(123,115,255,.22)
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;
+    scroll-padding-top:84px;
+    -webkit-text-size-adjust:100%
+}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Cairo",system-ui,"Segoe UI",Tahoma,sans-serif;
+  font-size:17px;
+  line-height:1.85;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px)
+}
+img{
+    max-width:100%;
+    display:block
+}
+a{
+    color:inherit;
+    text-decoration:none
+}
+:focus-visible{
+    outline:3px solid var(--accent);
+    outline-offset:3px;
+    border-radius:6px
+}
+.wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 20px
+}
+.skip{
+    position:absolute;
+    inset-inline-start:12px;
+    top:-60px;
+    background:var(--accent);
+    color:var(--accent-ink);
+    padding:8px 16px;
+    border-radius:8px;
+    z-index:100;
+    font-weight:700
+}
+.skip:focus{top:10px}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:46px;
+  padding:8px 26px;
+  border-radius:999px;
+  font-weight:700;
+  font-family:inherit;
+  font-size:16px;
+  cursor:pointer;
+  border:2px solid var(--accent);
+  background:transparent;
+  color:var(--accent);
+  transition:background .2s,color .2s,transform .15s
+}
+.btn:active{transform:scale(.97)}
+.btn.fill{
+    background:var(--accent);
+    color:var(--accent-ink)
+}
+.btn.fill:hover{filter:brightness(1.1)}
+.btn.line:hover{
+    background:var(--accent);
+    color:var(--accent-ink)
+}
+
+/* الهيدر */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0 0 auto;
+    height:env(safe-area-inset-top,0px);
+    background:var(--bg);
+    z-index:30
+}
+header{
+  position:sticky;
+  top:env(safe-area-inset-top,0px);
+  z-index:20;
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)
+}
+.bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    height:68px
+}
+.logo{
+    font-weight:900;
+    font-size:20px;
+    display:flex;
+    align-items:center;
+    gap:10px
+}
+.logo i{
+    width:26px;
+    height:30px;
+    background:var(--accent);
+    clip-path:var(--hex);
+    display:block}
+nav{
+    display:flex;
+    gap:6px;
+    align-items:center}
+nav a:not(.btn){
+    padding:6px 14px;
+    border-radius:999px;
+    color:var(--muted);
+    font-weight:600;
+    transition:color .2s, background .2s}
+nav a:not(.btn):hover{
+    color:var(--ink);
+    background:var(--soft)
+}
+nav a.active{
+    color:var(--accent);
+    background:var(--soft)
+}
+.end{
+    display:flex;
+    align-items:center;
+    gap:10px}
+.icon-btn{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:2px solid var(--line);
+  background:var(--surface);
+  color:var(--ink);
+  font-size:18px;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  padding:0;
+  transition:border-color .2s
+}
+.icon-btn:hover{border-color:var(--accent)}
+.menu-btn{display:none}
+.bars{
+    position:relative;
+    width:18px;
+    height:14px;
+    display:block
+}
+.bars i{
+    position:absolute;
+    inset-inline:0;
+    height:2px;
+    border-radius:2px;
+    background:var(--ink);
+    transition:transform .25s,opacity .2s,top .25s}
+.bars i:nth-child(1){top:0}.bars i:nth-child(2){top:6px}.bars i:nth-child(3){top:12px}
+.menu-btn[aria-expanded="true"] .bars i:nth-child(1){top:6px;transform:rotate(45deg)}
+.menu-btn[aria-expanded="true"] .bars i:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] .bars i:nth-child(3){top:6px;transform:rotate(-45deg)}
+.nav-sub{display:none}
+@media (max-width:720px){
+  .sub-top{display:none}
+  .menu-btn{display:grid}
+  nav{
+    display:none;
+    position:absolute;
+    top:100%;
+    inset-inline:0;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:8px 20px 20px;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 16px 28px rgba(0,0,0,.12)
+  }
+  nav.open{display:flex}
+  nav a:not(.btn){
+    padding:14px 6px;
+    border-radius:0;
+    border-bottom:1px solid var(--line);
+    font-size:18px;
+    background:none!important}
+  nav a.nav-sub{
+    display:inline-flex;
+    margin-top:16px
+  }
+}
+
+.hero{
+    display:grid;
+    grid-template-columns:1.15fr 1fr;
+    gap:48px;
+    align-items:center;
+    padding:64px 0 48px
+}
+
+/* ===== شارات الدور (صيدلي / مدرس كيمياء) ===== */
+.role{
+  --r-bg:color-mix(in srgb,var(--accent) 11%,var(--surface));
+  --r-fg:var(--accent);
+  --r-bar:var(--accent);
+  --cut:14px;
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 22px;
+  margin:0 0 18px 8px;
+  font-weight:800;
+  font-size:15px;
+  line-height:1.6;
+  color:var(--r-fg);
+  background:var(--r-bg);
+  border:0;
+  border-inline-start:5px solid var(--r-bar);
+  cursor:pointer;
+  user-select:none;
+  -webkit-tap-highlight-color:transparent;
+  /* الشكل الأول: مستطيل بزوايا مقصوصة */
+  clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut));
+  transition:clip-path .45s cubic-bezier(.6,0,.2,1),background .3s,color .3s,border-color .3s,transform .2s
+}
+.role:hover{transform:translateY(-2px)}
+.role:active{transform:scale(.96)}
+.role::before{
+  content:"";
+  flex:none;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--r-bar);
+  box-shadow:0 0 0 0 color-mix(in srgb,var(--r-bar) 55%,transparent);
+  animation:rolePulse 2.2s ease-out infinite;
+  transition:background .3s
+}
+@keyframes rolePulse{
+  70%{box-shadow:0 0 0 8px transparent}
+  100%{box-shadow:0 0 0 0 transparent}
+}
+
+/* مدرس كيمياء */
+.role--teacher{
+  --r-bg:color-mix(in srgb,var(--spark) 16%,var(--surface));
+  --r-fg:var(--ink);
+  --r-bar:var(--spark)
+}
+
+/* الشكل الثاني عند الضغط: سداسي ممتد وممتلئ */
+.role.alt{
+  --r-bg:var(--accent);
+  --r-fg:var(--accent-ink);
+  --r-bar:var(--accent-ink);
+  border-inline-start-color:var(--accent);
+  padding-inline:28px;
+  clip-path:polygon(calc(100% - var(--cut)) 0,var(--cut) 0,0 50%,var(--cut) 100%,calc(100% - var(--cut)) 100%,100% 50%);
+  animation:rolePop .45s cubic-bezier(.3,1.6,.5,1)
+}
+.role--teacher.alt{
+  --r-bg:var(--spark);
+  --r-fg:#1c1400;
+  --r-bar:#1c1400;
+  border-inline-start-color:var(--spark)
+}
+@keyframes rolePop{
+  0%{transform:scale(.9)}
+  100%{transform:scale(1)}
+}
+
+.hero h1{
+    font-size:clamp(38px,6.4vw,70px);
+    line-height:1.2;
+    margin:0 0 16px;
+    font-weight:900;
+    letter-spacing:-.5px
+}
+.hero p{
+    color:var(--muted);
+    max-width:38ch;
+    margin:0 0 30px;
+    font-size:19px
+}
+.acts{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap
+}
+.hexbox{
+    position:relative;
+    width:min(100%,380px);
+    aspect-ratio:52/60;
+    margin-inline:auto
+}
+.hexbox::before{
+    content:"";
+    position:absolute;
+    inset:-14px;
+    background:var(--accent);
+    clip-path:var(--hex);
+    opacity:.14
+}
+.hexbox::after{
+    content:"";
+    position:absolute;
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    background:var(--spark);
+    inset-block-end:6%;
+    inset-inline-start:-4%;
+    box-shadow:0 0 0 8px var(--bg)
+}
+.hex{
+    position:absolute;
+    inset:0;
+    clip-path:var(--hex);
+    background:var(--accent)
+}
+.hex img{
+    width:100%;
+    height:100%;
+  object-fit:cover;
+  object-position:center 35%
+}
+.hero>div:first-child{animation:rise .7s .05s both}
+.hexbox{animation:rise .7s .2s both}
+@keyframes rise{
+    from{
+        opacity:0;
+        transform:translateY(18px)
+    }
+}
+@media (max-width:820px){.hero{
+    grid-template-columns:1fr;
+    padding-top:36px;
+    gap:36px}
+    .hexbox{
+        width:min(78%,300px);
+        order:-1}
+        .hero>div:first-child{text-align:center}
+        .hero p,.acts{margin-inline:auto;justify-content:center}}
+
+/* زر الروابط */
+.links-btn{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  width:100%;
+  max-width:440px;
+  margin:0 auto;
+  padding:12px 16px;
+  border-radius:18px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  transition:transform .2s,border-color .2s,box-shadow .2s
+}
+.lb-icon{
+    flex:none;
+    width:44px;
+    height:44px;
+    border-radius:12px;
+    background:var(--accent);
+    color:var(--accent-ink);
+    display:grid;
+    place-items:center
+}
+.lb-text{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    line-height:1.4
+}
+.lb-text b{
+    font-size:17px;
+    font-weight:700
+}
+.lb-text small{
+    color:var(--muted);
+    font-size:14px
+}
+.lb-arrow{
+    color:var(--muted);
+    transition:transform .25s,
+    color .25s
+}
+.links-btn:hover{
+    transform:translateY(-2px);
+    border-color:var(--accent);
+    box-shadow:0 10px 24px var(--shadow)
+}
+.links-btn:hover .lb-arrow{
+    color:var(--accent);
+    transform:translate(-3px,-3px)
+}
+.links-btn.is-opening{
+    pointer-events:none;
+    border-color:var(--accent)
+}
+
+section{padding:68px 0}
+.head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:16px;
+    margin-bottom:28px;
+    flex-wrap:wrap
+}
+h2{
+    font-size:clamp(28px,4vw,40px);
+    margin:0;
+    font-weight:900;
+    line-height:1.35
+}
+.more{
+    color:var(--accent);
+    font-weight:700;
+    border-bottom:2px solid transparent
+}
+.more:hover{border-color:var(--accent)}
+
+/* الفيديوهات */
+.videos{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
+    gap:22px
+}
+.thumb{
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:16/9;
+  border-radius:16px;
+  background:linear-gradient(135deg,var(--accent),#5b3dff);
+  border:1px solid var(--line);
+  margin-bottom:12px;
+  transition:box-shadow .2s,transform .2s
+}
+.thumb img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover
+}
+.thumb::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 4px 16px rgba(0,0,0,.35);
+    transform:translate(-50%,-50%);
+    transition:transform .2s;
+    z-index:1
+}
+.thumb::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:20px;
+    height:22px;
+    background:var(--accent-ink);
+    clip-path:polygon(0 0,100% 50%,0 100%);
+    transform:translate(-35%,-50%);
+    z-index:2
+}
+.video a:hover .thumb{
+    box-shadow:0 12px 28px var(--shadow);
+    transform:translateY(-3px)
+}
+.video a:hover .thumb::before{transform:translate(-50%,-50%) scale(1.1)}
+.video h3{
+    margin:0;
+    font-size:18px;
+    line-height:1.6
+}
+
+/* الكورس */
+.course{
+  background:var(--accent);
+  color:var(--accent-ink);
+  border-radius:28px;
+  padding:48px;
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:32px;
+  align-items:center;
+  position:relative;
+  overflow:hidden
+}
+.course .tag{
+    display:inline-block;
+    background:var(--spark);
+    color:#1c1400;
+    font-weight:700;
+    font-size:14px;
+    padding:2px 14px;
+    border-radius:999px;
+    margin-bottom:12px
+}
+.course h2{margin-bottom:8px}
+.course p{
+    margin:0 0 24px;
+    max-width:46ch;
+    opacity:.92
+}
+.course .btn{
+    background:var(--accent-ink);
+    color:var(--accent);
+    border-color:var(--accent-ink)
+}
+.course .box{
+    aspect-ratio:16/10;
+    border-radius:20px;
+    border:2px solid rgba(255,255,255,.55);
+    overflow:hidden;
+    background:rgba(255,255,255,.12)
+}
+.course .box img{
+    width:100%;
+    height:100%;
+    object-fit:cover
+}
+@media (max-width:760px){.course{grid-template-columns:1fr;padding:32px 24px}}
+
+/* الرحلة */
+.timeline{
+    list-style:none;
+    margin:0;
+    padding:0;
+    border-inline-start:3px solid var(--line);
+    margin-inline-start:10px
+}
+.timeline li{
+    position:relative;
+    padding:0 30px 38px
+}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{
+    content:"";
+    position:absolute;
+    inset-inline-start:-13px;
+    top:8px;
+    width:23px;
+    height:26px;
+    background:var(--accent);
+    clip-path:var(--hex)
+}
+.timeline li.next::before{background:var(--spark)}
+.timeline .y{
+    color:var(--accent);
+    font-weight:900;
+    font-size:15px
+}
+.timeline h3{margin:0 0 4px;font-size:22px}
+.timeline p{margin:0;color:var(--muted);max-width:62ch}
+
+/* التواصل */
+.contact{
+    text-align:center;
+    background:var(--soft);
+    border-radius:28px;
+    padding:56px 24px
+}
+.contact h2{margin-bottom:8px}
+.contact p{color:var(--muted);margin:0 auto 26px;max-width:46ch}
+.contact .acts{justify-content:center}
+
+footer{
+    padding:36px 0 44px;
+    color:var(--muted);
+    font-size:15px;
+    border-top:1px solid var(--line)
+}
+footer .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a:hover{color:var(--accent)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+
+/* ===== تفاعل وعلامات كيميائية ===== */
+a,button,.btn{cursor:pointer}
+main{
+    position:relative;
+    overflow-x:clip
+}
+main>.wrap,main>section,main>.ticker{position:relative;z-index:1}
+#mol{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100vh;
+    height:100dvh;
+    z-index:0;
+    pointer-events:none;
+    -webkit-mask-image:linear-gradient(#000 65%,transparent);
+    mask-image:linear-gradient(#000 65%,transparent)}
+.yt{
+    width:26px;
+    height:18px;
+    flex:none;
+    display:inline-block
+}
+.more{
+    display:inline-flex;
+    align-items:center;
+    gap:8px
+}
+.hex img{transition:transform .25s ease-out;transform:scale(1.16) translateY(18px)}
+.tile{
+    position:absolute;
+    z-index:3;
+    transition:transform .2s ease-out
+}
+.tile span{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-width:66px;
+    height:66px;
+    padding:0 10px;
+    border-radius:16px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    box-shadow:0 12px 26px var(--shadow);
+    color:var(--accent);
+    direction:ltr;
+    animation:float 5s ease-in-out infinite
+}
+.tile b{
+    font-size:23px;
+    font-weight:900;
+    line-height:1.1
+}
+.tile small{
+    font-size:11px;
+    font-weight:600;
+    color:var(--muted);
+    line-height:1
+}
+
+.tile small.no{
+    position:absolute;
+    bottom:6px;
+    left:8px;
+    font-size:11px;
+    line-height:1
+}
+.t1{
+    left:-16%;
+    top:6%
+}
+.t2{
+    right:-15%;
+    top:14%
+}
+.t3{
+    right:-8%;
+    bottom:0
+}
+.t4{
+    left:-12%;
+    bottom:18%
+}
+.t5{
+    left:34%;
+    top:-11%
+}
+.t2 span{
+    animation-delay:-1s
+}
+.t3 span{
+    animation-delay:-2s
+}
+.t4 span{
+    animation-delay:-3s
+}
+.t5 span{
+    animation-delay:-4s
+}
+.t3 span{
+    background:var(--accent);
+    color:var(--accent-ink)
+}
+.t3 small{
+    color:var(--accent-ink);
+    opacity:.8
+}
+@keyframes float{
+    50%{transform:translateY(-9px)}
+}
+@media (max-width:820px){
+    .tile span{
+        min-width:48px;
+        height:48px;
+        border-radius:12px
+    }
+    .tile b{
+        font-size:17px
+    }
+    .tile small{
+        font-size:9px
+    }
+    .tile small.no{
+        bottom:4px;
+        left:6px;
+        font-size:9px
+    }
+    .t1{
+        left:-8%
+    }
+    .t2{
+        right:-8%
+    }
+    .t3{
+        right:-4%
+    }
+    .t4{
+        left:-6%
+    }
+}
+.ytcard{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+    max-width:760px;
+    margin:16px auto 0;
+    padding:20px 26px;
+    border-radius:22px;
+    background:var(--surface);
+    border:1px solid var(--line)
+}
+.ytcard:hover{
+    box-shadow:0 14px 34px rgba(255,0,0,.18);
+    border-color:#ff5a5a
+}
+.yt.big{
+    width:68px;
+    height:48px;
+    filter:drop-shadow(0 6px 10px rgba(255,0,0,.3))
+}
+.yt-txt{
+    flex:1;
+    min-width:220px
+}
+.ytcard h3{
+    margin:0;
+    font-size:19px;
+    line-height:1.5
+}
+.ytcard p{
+    margin:2px 0 0;
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.7
+}
+.ticker{
+    overflow:hidden;
+    direction:ltr;
+    margin-top:52px;
+    padding:14px 0;
+    border-block:1px solid var(--line);
+    background:var(--surface);
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)
+}
+.track{
+    display:flex;
+    align-items:center;
+    gap:34px;width:max-content;
+    animation:tick 45s linear infinite
+}
+/* الإيقاف عند المرور بالماوس فقط على الأجهزة التي تدعم hover (وليس اللمس) */
+@media (hover:hover) and (pointer:fine){
+  .ticker:hover .track{animation-play-state:paused}
+}
+.track b{
+    font-size:20px;
+    font-weight:700;
+    color:var(--muted);
+    transition:color .2s
+}
+.track b:hover{
+    color:var(--accent)
+}
+.track i{
+    width:12px;
+    height:14px;
+    background:var(--spark);
+    clip-path:var(--hex)
+}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* يبقى الشريط متحركًا دائمًا، وأسرع قليلًا على الشاشات الصغيرة */
+.track{animation:tick 45s linear infinite!important}
+@media (max-width:720px){
+  .track{animation-duration:30s!important;gap:26px}
+  .track b{font-size:17px}
+}
+.tilt{
+    transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
+    transition:transform .15s ease-out,box-shadow .2s,border-color .2s
+}
+.video a:hover .thumb.tilt{
+    transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-3px)
+    }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="yt" viewBox="0 0 28 20"><rect width="28" height="20" rx="5.5" fill="#f00"/><path d="M11.2 5.4v9.2l7.8-4.6z" fill="#fff"/></symbol></svg>
+<a class="skip" href="#videos">تخطَّ إلى المحتوى</a>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top"><i aria-hidden="true"></i>Dr. Ahmed Emad</a>
+    <nav id="mainNav" aria-label="القائمة الرئيسية">
+      <a href="#top">الرئيسية</a>
+      <a href="#videos">الفيديوهات</a>
+      <a href="#courses">الكورسات</a>
+      <a href="#journey">رحلتي</a>
+      <a href="#contact">تواصل معي</a>
+      <a class="btn fill nav-sub" href="https://www.youtube.com/@dr-omda?sub_confirmation=1" target="_blank" rel="noopener"><svg class="yt" aria-hidden="true"><use href="#yt"/></svg>اشترك في القناة</a>
+    </nav>
+    <div class="end">
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="تبديل الوضع الليلي">🌙</button>
+      <a class="btn fill sub-top" href="https://www.youtube.com/@dr-omda?sub_confirmation=1" target="_blank" rel="noopener"><svg class="yt" aria-hidden="true"><use href="#yt"/></svg>اشترك</a>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mainNav">
+        <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <canvas id="mol" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <span class="role role--pharmacist">صيدلي</span>
+        <span class="role role--teacher">مدرس كيمياء</span>
+
+        <h1>أهلًا، أنا د. أحمد عماد</h1>
+        <p>أشرح الكيمياء والعلوم المتكاملة للثانوية العامة والأزهرية والبكالوريا بأسلوب مبسّط ومنظم.</p>
+        <div class="acts">
+          <a class="btn fill" href="#videos">شاهد أحدث الفيديوهات</a>
+          <a class="btn line" href="#courses">الكورسات</a>
+        </div>
+      </div>
+      <div class="hexbox">
+        <div class="tile t1" data-d="46"><span><b>Au</b><small class="no">79</small></span></div>
+        <div class="tile t2" data-d="30"><span><b>C</b><small class="no">6</small></span></div>
+        <div class="tile t3" data-d="56"><span><small>صيدلـي</small><b>Rx</b></span></div>
+        <div class="tile t4" data-d="36"><span><b>H₂O</b></span></div>
+        <div class="tile t5" data-d="24"><span><b>N</b><small class="no">7</small></span></div>
+        <div class="hex"><img src="https://surveyheartmedia.s3.ap-south-1.amazonaws.com/files/cd0c33b0594e4433d1a8ca61f11ef7/6afb8e91a9ba5f7a43a0ec04/sh_1794871003376.jpg" alt="د. أحمد عماد" width="520" height="600" fetchpriority="high"></div>
+      </div>
+    </div>
+    <a class="links-btn" id="linksBtn" href="https://dr-omda.github.io/1/" target="_blank" rel="noopener noreferrer" aria-label="كل روابطنا، يفتح في نافذة جديدة">
+      <span class="lb-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
+      </span>
+      <span class="lb-text"><b>Our Links</b><small id="linksHint">كل روابطنا في مكان واحد</small></span>
+      <svg class="lb-arrow" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+    </a>
+    <div class="ytcard tilt">
+      <svg class="yt big" aria-hidden="true"><use href="#yt"/></svg>
+      <div class="yt-txt"><h3>قناة د. أحمد عماد على يوتيوب</h3><p>ملخصات وشروحات الكيمياء لكل باب، وتصلك الفيديوهات الجديدة فور نزولها.</p></div>
+      <a class="btn fill" href="https://www.youtube.com/@dr-omda?sub_confirmation=1" target="_blank" rel="noopener">اشترك الآن</a>
+    </div>
+  </div>
+
+  <div class="ticker" aria-hidden="true"><div class="track" id="track"></div></div>
+
+  <section id="videos">
+    <div class="wrap">
+      <div class="head"><h2>أحدث الفيديوهات</h2><a class="more" href="https://www.youtube.com/@dr-omda/videos" target="_blank" rel="noopener"><svg class="yt" aria-hidden="true"><use href="#yt"/></svg> كل الفيديوهات</a></div>
+      <ul class="videos">
+        <li class="video">
+          <a href="https://youtu.be/hOFr4CIgR6A?si=BAMFuiQP6pz3pR43" target="_blank" rel="noopener">
+            <div class="thumb tilt"><img src="5.jpeg" alt="" loading="lazy" width="640" height="360" onerror="this.remove()"></div>
+            <h3>ملخص شرح الباب الأول للصف الثاني الثانوي الأزهري</h3>
+          </a>
+        </li>
+        <li class="video">
+          <a href="https://youtu.be/Unvbl8ldpDE?si=6wQvy2MLx0UljVya" target="_blank" rel="noopener">
+            <div class="thumb tilt"><img src="3.jpeg" alt="" loading="lazy" width="640" height="360" onerror="this.remove()"></div>
+            <h3>ملخص شرح الباب الثاني للصف الثاني الثانوي الأزهري</h3>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="courses" style="padding-top:0">
+    <div class="wrap">
+      <div class="course tilt">
+        <div>
+          <span class="tag">الكورس المدفوع</span>
+          <h2>مراجعة الباب الأول</h2>
+          <p>شرح ملخص الباب الأول من الكورس.</p>
+          <a class="btn" href="https://youtu.be/YT7nILMaU1Q?si=7yHcUXFq7b9oVpsu" target="_blank" rel="noopener">تفاصيل الكورس</a>
+        </div>
+        <div class="box"><img src="4.png" alt="غلاف الكورس" loading="lazy" width="640" height="400" onerror="this.remove()"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2>رحلتي من البداية إلى الآن</h2></div>
+      <ol class="timeline">
+        <li><div class="y">2007</div><h3>البداية</h3><p>وُلدت في محافظة الشرقية، مدينة الزقازيق، في أوائل شهر يوليو.</p></li>
+        <li><div class="y">2025</div><h3>دخول الجامعة</h3><p>التحقت بكلية الصيدلة، قسم Pharm-D.</p></li>
+        <li><div class="y">2026</div><h3>العمل</h3><p>بدأت شرح الكيمياء والعلوم المتكاملة للثانوية العامة والأزهرية والبكالوريا، بجانب عملي في الصيدليات.</p></li>
+        <li class="next"><div class="y">قريبًا</div><h3>الخطوة القادمة</h3><p>شرح Organic Chemistry لطلاب الجامعات في كليات العلوم والصيدلة.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact">
+        <h2>عندك فكرة تعاون أو سؤال؟</h2>
+        <p>للتعاون والرعايات والاستفسارات، ابعتلي وهرد عليك في أقرب وقت.</p>
+        <div class="acts">
+          <a class="btn fill" href="mailto:drahmedemad8@gmail.com">أرسل رسالة</a>
+          <a class="btn line" href="https://www.youtube.com/@dr-omda?sub_confirmation=1" target="_blank" rel="noopener"><svg class="yt" aria-hidden="true"><use href="#yt"/></svg>اشترك في القناة</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <span>© 2026 د. أحمد عماد. جميع الحقوق محفوظة.</span>
+    <a href="mailto:drahmedemad8@gmail.com">drahmedemad8@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('themeBtn'),
+      mq=window.matchMedia('(prefers-color-scheme: dark)'),meta=document.querySelector('meta[name="theme-color"]');
+  function current(){return root.getAttribute('data-theme')||(mq.matches?'dark':'light')}
+  function apply(t){
+    root.setAttribute('data-theme',t);
+    btn.textContent=t==='dark'?'☀️':'🌙';
+    btn.setAttribute('aria-label',t==='dark'?'التبديل للوضع النهاري':'التبديل للوضع الليلي');
+    if(meta)meta.setAttribute('content',t==='dark'?'#0e0d1f':'#2a1fff');
+  }
+  var saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+  apply(saved==='dark'||saved==='light'?saved:current());
+  btn.addEventListener('click',function(){
+    var n=current()==='dark'?'light':'dark';apply(n);
+    try{localStorage.setItem('theme',n)}catch(e){}
+  });
+})();
+
+(function(){
+  var link=document.getElementById('linksBtn'),hint=document.getElementById('linksHint');
+  if(!link||!hint)return;var orig=hint.textContent;
+  link.addEventListener('click',function(){
+    if(link.classList.contains('is-opening'))return;
+    link.classList.add('is-opening');hint.textContent='جارٍ فتح الصفحة…';
+    setTimeout(function(){link.classList.remove('is-opening');hint.textContent=orig},1500);
+  });
+})();
+
+(function(){
+  var btn=document.getElementById('menuBtn'),nav=document.getElementById('mainNav');
+  if(!btn||!nav)return;
+  function setOpen(o){
+    nav.classList.toggle('open',o);
+    btn.setAttribute('aria-expanded',o?'true':'false');
+    btn.setAttribute('aria-label',o?'إغلاق القائمة':'فتح القائمة');
+  }
+  btn.addEventListener('click',function(e){e.stopPropagation();setOpen(!nav.classList.contains('open'))});
+  nav.addEventListener('click',function(e){if(e.target.closest('a'))setOpen(false)});
+  document.addEventListener('click',function(e){if(!nav.contains(e.target))setOpen(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){setOpen(false);btn.focus()}});
+  window.matchMedia('(min-width:721px)').addEventListener('change',function(e){if(e.matches)setOpen(false)});
+})();
+
+/* تمييز القسم الحالي في القائمة */
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  var links=[].slice.call(document.querySelectorAll('nav a[href^="#"]:not(.btn)'));
+  var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(a){a.classList.remove('active');a.removeAttribute('aria-current')});
+        var a=map[e.target.id];if(a){a.classList.add('active');a.setAttribute('aria-current','true')}
+      }
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  ['top','videos','courses','journey','contact'].forEach(function(id){
+    var el=document.getElementById(id);if(el)io.observe(el);
+  });
+})();
+
+/* شارات الدور: تبديل الشكل عند الضغط */
+(function(){
+  [].forEach.call(document.querySelectorAll('.role'),function(r){
+    r.setAttribute('role','button');r.setAttribute('tabindex','0');r.setAttribute('aria-pressed','false');
+    function t(){var on=r.classList.toggle('alt');r.setAttribute('aria-pressed',on?'true':'false')}
+    r.addEventListener('click',t);
+    r.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}});
+  });
+})();
+
+/* العناصر الكيميائية التفاعلية */
+(function(){
+  var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var root=document.documentElement;
+
+  /* شريط المعادلات */
+  var tr=document.getElementById('track');
+  if(tr){
+    var f=['H₂O','NaCl','C₆H₁₂O₆','CH₃COOH','NH₃','CO₂','HCl','C₆H₆','Au','Rx','pH','C₂H₅OH','NaOH','CaCO₃','H₂SO₄'];
+    var h=f.map(function(x){return '<b>'+x+'</b><i></i>'}).join('');
+    tr.innerHTML=h+h;
+  }
+
+  /* شبكة الجزيئات */
+  var c=document.getElementById('mol');
+  if(c){
+    var ctx=c.getContext('2d'),W=0,H=0,P=[],m={x:-999,y:-999},col='#2a1fff',spark='#ffb800',L=130;
+    function colors(){var s=getComputedStyle(root);col=s.getPropertyValue('--accent').trim()||col;spark=s.getPropertyValue('--spark').trim()||spark}
+    function size(){
+      var d=Math.min(devicePixelRatio||1,2);W=c.clientWidth;H=c.clientHeight;
+      c.width=W*d;c.height=H*d;ctx.setTransform(d,0,0,d,0,0);
+      var n=W<600?20:46;P=[];
+      for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.45,vy:(Math.random()-.5)*.45,r:3+Math.random()*4,s:Math.random()<.18});
+    }
+    function frame(){
+      ctx.clearRect(0,0,W,H);
+      for(var i=0;i<P.length;i++){
+        var p=P[i];
+        if(!reduce){
+          p.x+=p.vx;p.y+=p.vy;
+          if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+          var dx=p.x-m.x,dy=p.y-m.y,d=Math.sqrt(dx*dx+dy*dy);
+          if(d<150&&d>0){var k=(150-d)/150*2.2;p.x+=dx/d*k;p.y+=dy/d*k}
+        }
+      }
+      ctx.lineWidth=1.4;
+      for(var a=0;a<P.length;a++){
+        for(var b=a+1;b<P.length;b++){
+          var ex=P[a].x-P[b].x,ey=P[a].y-P[b].y,e=Math.sqrt(ex*ex+ey*ey);
+          if(e<L){ctx.globalAlpha=(1-e/L)*.32;ctx.strokeStyle=col;ctx.beginPath();ctx.moveTo(P[a].x,P[a].y);ctx.lineTo(P[b].x,P[b].y);ctx.stroke()}
+        }
+        var mx=P[a].x-m.x,my=P[a].y-m.y,md=Math.sqrt(mx*mx+my*my);
+        if(md<190){ctx.globalAlpha=(1-md/190)*.55;ctx.strokeStyle=spark;ctx.beginPath();ctx.moveTo(P[a].x,P[a].y);ctx.lineTo(m.x,m.y);ctx.stroke()}
+      }
+      for(var j=0;j<P.length;j++){
+        var q=P[j];
+        ctx.globalAlpha=.5;ctx.fillStyle=q.s?spark:col;
+        ctx.beginPath();ctx.arc(q.x,q.y,q.r,0,6.2832);ctx.fill();
+        ctx.globalAlpha=.9;ctx.lineWidth=1.2;ctx.strokeStyle=q.s?spark:col;
+        ctx.beginPath();ctx.arc(q.x,q.y,q.r+3,0,6.2832);ctx.stroke();
+      }
+      ctx.globalAlpha=1;
+    }
+    function loop(){if(!document.hidden)frame();if(!reduce)requestAnimationFrame(loop)}
+    colors();size();frame();if(!reduce)requestAnimationFrame(loop);
+    var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(size,150)});
+    new MutationObserver(colors).observe(root,{attributes:true,attributeFilter:['data-theme']});
+    document.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top});
+    document.addEventListener('mouseleave',function(){m.x=m.y=-999});
+  }
+
+  if(!fine)return;
+
+  if(reduce)return;
+
+  /* تأثير العمق للصورة والمربعات */
+  var tiles=[].slice.call(document.querySelectorAll('.tile')),img=document.querySelector('.hex img');
+  document.addEventListener('mousemove',function(e){
+    var nx=e.clientX/innerWidth-.5,ny=e.clientY/innerHeight-.5;
+    tiles.forEach(function(t){var d=+t.dataset.d;t.style.transform='translate('+(-nx*d)+'px,'+(-ny*d)+'px)'});
+    if(img)img.style.transform='scale(1.18) translate('+(nx*-14)+'px,'+(20+ny*-14)+'px)';
+  });
+
+  /* ميل البطاقات */
+  [].forEach.call(document.querySelectorAll('.tilt'),function(el){
+    el.addEventListener('mousemove',function(e){
+      var r=el.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
+      el.style.setProperty('--ry',(px*9)+'deg');el.style.setProperty('--rx',(-py*9)+'deg');
+    });
+    el.addEventListener('mouseleave',function(){el.style.setProperty('--rx','0deg');el.style.setProperty('--ry','0deg')});
+  });
+
+  /* أزرار مغناطيسية */
+  [].forEach.call(document.querySelectorAll('.btn'),function(b){
+    b.addEventListener('mousemove',function(e){
+      var r=b.getBoundingClientRect();
+      b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.18)+'px,'+((e.clientY-r.top-r.height/2)*.3)+'px)';
+    });
+    b.addEventListener('mouseleave',function(){b.style.transform=''});
+  });
+})();
+</script>
+</body>
+</html>
