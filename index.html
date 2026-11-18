@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-<link rel="icon" href="https://surveyheartmedia.s3.ap-south-1.amazonaws.com/files/cd0c33b0594e4433d1a8ca61f11ef7/6a2e019efda9df4edf755681/sh_1781399992362.png" type="image/png">
+<link rel="icon" href="https://surveyheartmedia.s3.ap-south-1.amazonaws.com/files/6bddfed09378cddade2091f970c741/6afe1b577c9d7f56547044ab/sh_1795038101007.jpg" type="image/png">
 <style>
 :root{
   --bg:#f8f9fd;
@@ -355,61 +355,182 @@ nav a.active{color:var(--accent);background:var(--soft)}
 
 /* ===== قائمة الروابط (Bubble) ===== */
 .links-wrap{position:relative;width:100%;max-width:440px;margin:0 auto}
-.links-btn{font:inherit;color:inherit;text-align:start;cursor:pointer;-webkit-appearance:none;appearance:none}
+.links-btn{
+  font:inherit;color:inherit;text-align:start;cursor:pointer;
+  -webkit-appearance:none;appearance:none;
+  position:relative;overflow:hidden;isolation:isolate
+}
+/* لمعة بتعدّي على الزر */
+.links-btn::after{
+  content:"";position:absolute;inset-block:0;width:60%;left:-80%;z-index:-1;
+  background:linear-gradient(100deg,transparent,color-mix(in srgb,var(--accent) 22%,transparent),transparent);
+  transform:skewX(-20deg);
+  animation:btnShine 4.5s ease-in-out infinite
+}
+@keyframes btnShine{0%,55%{left:-80%}100%{left:140%}}
+.lb-icon{position:relative;transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.lb-icon::after{
+  content:"";position:absolute;inset:0;border-radius:12px;
+  border:2px solid var(--accent);
+  animation:iconRing 2.4s ease-out infinite
+}
+@keyframes iconRing{from{opacity:.7;transform:scale(1)}to{opacity:0;transform:scale(1.55)}}
+.links-btn:hover .lb-icon,.links-btn[aria-expanded="true"] .lb-icon{transform:rotate(-12deg) scale(1.08)}
 .links-btn[aria-expanded="true"]{border-color:var(--accent);box-shadow:0 10px 24px var(--shadow)}
 .links-btn[aria-expanded="true"] .lb-arrow{color:var(--accent);transform:rotate(90deg)}
+
 .links-pop{
+  --o:calc(100% - 38px);
   position:absolute;
   inset-inline:0;
-  top:calc(100% + 14px);
+  top:calc(100% + 18px);
   z-index:15;
-  padding:10px;
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:18px;
-  box-shadow:0 18px 40px var(--shadow);
-  transform-origin:top center;
-  animation:popIn .22s cubic-bezier(.3,1.4,.5,1)
+  padding:12px;
+  border:2px solid transparent;
+  border-radius:26px;
+  background:
+    linear-gradient(var(--surface),var(--surface)) padding-box,
+    conic-gradient(from var(--a),#6C5CFF,#00C2FF,#FFB800,#FF4D8D,#6C5CFF) border-box;
+  box-shadow:0 30px 60px var(--shadow);
+  transform-origin:var(--o) 0;
+  animation:popIn .65s cubic-bezier(.2,.9,.25,1.1) both,ringSpin 6s linear infinite
 }
 .links-pop[hidden]{display:none}
+.links-pop.closing{
+  pointer-events:none;
+  animation:popOut .32s cubic-bezier(.5,0,.75,0) forwards,ringSpin 6s linear infinite
+}
+/* توهج داخلي ناعم */
+.links-pop::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  border-radius:inherit;
+  pointer-events:none;
+  background:
+    radial-gradient(280px circle at 12% 0,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%),
+    radial-gradient(240px circle at 95% 100%,color-mix(in srgb,var(--spark) 20%,transparent),transparent 70%);
+  animation:popGlow 3.5s ease-in-out infinite alternate
+}
+@keyframes popGlow{from{opacity:.55}to{opacity:1}}
+/* السهم الصغير فوق القائمة */
 .links-pop::before{
   content:"";
   position:absolute;
-  top:-8px;
+  top:-9px;
   inset-inline-start:30px;
   width:14px;
   height:14px;
   background:var(--surface);
-  border-top:1px solid var(--line);
-  border-inline-start:1px solid var(--line);
-  transform:rotate(45deg)
+  border-top:2px solid #6C5CFF;
+  border-inline-start:2px solid #6C5CFF;
+  border-radius:3px 0 0 0;
+  transform:rotate(45deg);
+  animation:notchIn .5s .25s cubic-bezier(.3,1.8,.5,1) both
 }
-.links-pop ol{list-style:none;margin:0;padding:0;counter-reset:lk}
-.links-pop li{counter-increment:lk}
+@keyframes notchIn{from{transform:rotate(45deg) scale(0)}}
+
+.links-pop ol{
+  list-style:none;
+  margin:0;
+  padding:0;
+  counter-reset:lk;
+  position:relative;
+  display:grid;
+  gap:8px
+}
+.links-pop li{
+  --c1:var(--accent);
+  --c2:#00C2FF;
+  --cn:var(--accent-ink);
+  counter-increment:lk;
+  animation:itemIn .6s calc(.2s + var(--i,0)*.11s) both cubic-bezier(.2,.9,.3,1.15)
+}
+.links-pop li:nth-child(2){--c1:#FF4D8D;--c2:var(--spark);--cn:#1c1400}
+
 .links-pop li a{
+  position:relative;
   display:flex;
   align-items:center;
-  gap:12px;
-  padding:12px 14px;
-  border-radius:12px;
+  gap:14px;
+  padding:13px 14px;
+  border-radius:16px;
   font-weight:700;
-  transition:background .2s,color .2s
+  overflow:hidden;
+  background:color-mix(in srgb,var(--soft) 55%,transparent);
+  border:1px solid var(--line);
+  transition:transform .3s cubic-bezier(.3,1.5,.5,1),border-color .25s,box-shadow .25s,color .2s
 }
+/* توهج يتبع المؤشر */
+.links-pop li a::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s;
+  background:radial-gradient(200px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--c1) 22%,transparent),transparent 70%)
+}
+/* الرقم السداسي */
 .links-pop li a::before{
   content:counter(lk);
+  position:relative;
+  z-index:1;
   flex:none;
-  width:30px;
-  height:30px;
+  width:38px;
+  height:43px;
   display:grid;
   place-items:center;
-  border-radius:9px;
-  background:var(--soft);
-  color:var(--accent);
-  font-size:15px;
-  font-weight:900
+  font-size:16px;
+  font-weight:900;
+  color:var(--cn);
+  background:linear-gradient(135deg,var(--c1),var(--c2));
+  clip-path:var(--hex);
+  animation:hexIn .8s calc(.4s + var(--i,0)*.11s) both cubic-bezier(.3,1.7,.5,1);
+  transition:transform .5s cubic-bezier(.3,1.7,.5,1)
 }
-.links-pop li a:hover{background:var(--soft);color:var(--accent)}
-@keyframes popIn{from{opacity:0;transform:translateY(-8px) scale(.96)}}
+.li-t{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;line-height:1.5}
+.li-t small{color:var(--muted);font-weight:600;font-size:13px}
+.li-go{
+  position:relative;
+  z-index:1;
+  flex:none;
+  color:var(--muted);
+  opacity:.45;
+  transform:translateX(6px);
+  transition:opacity .25s,transform .3s,color .2s
+}
+.links-pop li a:hover,.links-pop li a:focus-visible{
+  transform:translateX(-6px);
+  color:var(--ink);
+  border-color:var(--c1);
+  box-shadow:0 10px 26px color-mix(in srgb,var(--c1) 28%,transparent)
+}
+.links-pop li a:hover::after,.links-pop li a:focus-visible::after{opacity:1}
+.links-pop li a:hover::before{transform:rotate(360deg) scale(1.14)}
+.links-pop li a:hover .li-go,.links-pop li a:focus-visible .li-go{opacity:1;transform:none;color:var(--c1)}
+.links-pop li a:active{transform:scale(.97)}
+
+/* فتح: دائرة بتتوسع من أيقونة الزر */
+@keyframes popIn{
+  0%{opacity:0;transform:translateY(-14px) scale(.88);clip-path:circle(0% at var(--o) 0)}
+  40%{opacity:1}
+  100%{opacity:1;transform:none;clip-path:circle(250% at var(--o) 0)}
+}
+/* إغلاق: بترجع للأيقونة */
+@keyframes popOut{
+  0%{opacity:1;transform:none;clip-path:circle(250% at var(--o) 0)}
+  100%{opacity:0;transform:translateY(-10px) scale(.92);clip-path:circle(0% at var(--o) 0)}
+}
+@keyframes itemIn{
+  from{opacity:0;transform:translateX(44px) scale(.9) rotate(1.5deg);filter:blur(6px)}
+  to{filter:blur(0)}
+}
+@keyframes hexIn{
+  from{transform:scale(0) rotate(-180deg)}
+}
 
 section{padding:68px 0}
 .head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:28px;flex-wrap:wrap}
@@ -751,7 +872,7 @@ footer{align-items:center}
       </div>
     </div>
 
-    <!-- Our Links: bubble فيها لينكين (غيّر href لما تجهز الروابط) -->
+    <!-- Our Links: bubble فيها لينكين (لو عايز تضيف لينك زوّد li وغيّر --i) -->
     <div class="links-wrap" id="linksWrap">
       <button class="links-btn" id="linksBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="linksMenu">
         <span class="lb-icon" aria-hidden="true">
@@ -762,8 +883,14 @@ footer{align-items:center}
       </button>
       <div class="links-pop" id="linksMenu" hidden>
         <ol>
-          <li><a href="https://dr-omda.github.io/1/" target="_blank" rel="noopener noreferrer"> My personal links</a></li>
-          <li><a href="https://dr-omda.github.io/dr/" target="_blank" rel="noopener noreferrer"> My professional links</a></li>
+          <li style="--i:0"><a href="https://dr-omda.github.io/1/" target="_blank" rel="noopener noreferrer">
+            <span class="li-t"><b>My personal links</b><small>حساباتي الشخصية</small></span>
+            <svg class="li-go" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+          </a></li>
+          <li style="--i:1"><a href="https://dr-omda.github.io/dr/" target="_blank" rel="noopener noreferrer">
+            <span class="li-t"><b>My professional links</b><small>حساباتي المهنية</small></span>
+            <svg class="li-go" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+          </a></li>
         </ol>
       </div>
     </div>
@@ -867,15 +994,44 @@ footer{align-items:center}
 (function(){
   var wrap=document.getElementById('linksWrap'),btn=document.getElementById('linksBtn'),pop=document.getElementById('linksMenu');
   if(!wrap||!btn||!pop)return;
-  function setOpen(o){pop.hidden=!o;btn.setAttribute('aria-expanded',o?'true':'false')}
-  btn.addEventListener('click',function(e){e.stopPropagation();setOpen(pop.hidden)});
+  var timer=null;
+  function finish(){
+    clearTimeout(timer);
+    pop.removeEventListener('animationend',onEnd);
+    pop.hidden=true;
+    pop.classList.remove('closing');
+  }
+  function onEnd(e){if(e.animationName==='popOut')finish()}
+  function isOpen(){return btn.getAttribute('aria-expanded')==='true'}
+  function setOpen(o){
+    if(o===isOpen())return;
+    btn.setAttribute('aria-expanded',o?'true':'false');
+    if(o){
+      clearTimeout(timer);
+      pop.removeEventListener('animationend',onEnd);
+      pop.classList.remove('closing');
+      pop.hidden=false;
+    }else{
+      pop.classList.add('closing');
+      pop.addEventListener('animationend',onEnd);
+      timer=setTimeout(finish,450); /* احتياطي لو الأنيميشن متعطّل */
+    }
+  }
+  btn.addEventListener('click',function(e){e.stopPropagation();setOpen(!isOpen())});
   pop.addEventListener('click',function(e){
     var a=e.target.closest('a');if(!a)return;
-    if(a.getAttribute('href')==='#')e.preventDefault(); /* لحد ما تحط الروابط الحقيقية */
+    if(a.getAttribute('href')==='#')e.preventDefault();
     setOpen(false);
   });
+  /* توهج يتبع المؤشر داخل القائمة */
+  pop.addEventListener('pointermove',function(e){
+    var a=e.target.closest('a');if(!a)return;
+    var r=a.getBoundingClientRect();
+    a.style.setProperty('--mx',(e.clientX-r.left)+'px');
+    a.style.setProperty('--my',(e.clientY-r.top)+'px');
+  });
   document.addEventListener('click',function(e){if(!wrap.contains(e.target))setOpen(false)});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!pop.hidden){setOpen(false);btn.focus()}});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&isOpen()){setOpen(false);btn.focus()}});
 })();
 
 (function(){
@@ -933,7 +1089,7 @@ footer{align-items:center}
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){
       if(e.isIntersecting){e.target.classList.add('in')}
-      else if(e.boundingClientRect.top>0){e.target.classList.remove('in')} /* راجع لفوق: يختفي ويتعاد عند النزول */
+      else if(e.boundingClientRect.top>0){e.target.classList.remove('in')}
     });
   },{threshold:.3,rootMargin:'0px 0px -8% 0px'});
   items.forEach(function(li){io.observe(li)});
